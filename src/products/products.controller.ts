@@ -1,5 +1,5 @@
 import { ProductService } from './products.service';
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param } from '@nestjs/common';
 import { Product } from './product.model';
 
 @Controller('products')
@@ -10,6 +10,11 @@ export class ProductsController {
     @Get()
     getProducts(): Product[] {
        return this.productsService.getAll()
+    }
+
+    @Get(':id')
+    getOne(@Param() params: any): Product {
+        return this.productsService.getOne(params.id)
     }
 
     @Post()

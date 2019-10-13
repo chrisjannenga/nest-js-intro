@@ -14,4 +14,8 @@ export class ProductService {
     getAll() {
         return this.products;
     }
+
+    getOne(index: string) {
+        return this.products[index];
+    }
 }
