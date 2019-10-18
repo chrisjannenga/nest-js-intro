@@ -6,8 +6,9 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017/nestjs', { useNewUrlParser: true }),
-    ProductsModule
+    // tslint:disable-next-line: max-line-length
+    MongooseModule.forRoot('mongodb+srv://admin:S@G3M@R13J@mongo-nest-intro-qh3pj.mongodb.net/nestjs-demo?retryWrites=true&w=majority', { useNewUrlParser: true }),
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
